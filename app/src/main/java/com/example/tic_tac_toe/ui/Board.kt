@@ -7,6 +7,7 @@ enum class BoardValues(val str: String) {
     X("X"), O("O"), None(" ")
 }
 
+
 class Board {
     val board = listOf(
         listOf(
