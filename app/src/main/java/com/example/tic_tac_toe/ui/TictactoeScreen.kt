@@ -71,7 +71,7 @@ fun Grid(board: Board) {
 fun GridRow(row: List<MutableState<BoardValues>>, board: Board) {
     Row {
         row.forEach { cell ->
-            Square(s = cell, onClick = board.ClickHandler(cell))
+            Square(s = cell, onClick = board.clickHandler(cell))
         }
     }
 }

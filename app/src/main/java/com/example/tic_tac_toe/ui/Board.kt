@@ -28,6 +28,7 @@ class Board {
     val turn = mutableStateOf(BoardValues.X)
     val winner = mutableStateOf(BoardValues.None)
     fun checkWinner() {
+
         val squares = board.flatten().map { it.value }
 
         val lines = listOf(
@@ -59,7 +60,7 @@ class Board {
         turn.value = BoardValues.X
     }
 
-    fun changeTurn() {
+    private fun changeTurn() {
         if (turn.value == BoardValues.X) {
             turn.value = BoardValues.O
             machineTurn()
@@ -69,7 +70,7 @@ class Board {
 
     }
 
-    fun ClickHandler(s: MutableState<BoardValues>): () -> Unit {
+    fun clickHandler(s: MutableState<BoardValues>): () -> Unit {
         return fun() {
             if (s.value != BoardValues.None) {
                 return
@@ -83,7 +84,7 @@ class Board {
         }
     }
 
-    fun machineTurn() {
+    private fun machineTurn() {
         if (winner.value != BoardValues.None) {
             return
         }
